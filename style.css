@@ -1,0 +1,554 @@
+/* general */
+
+/* this "*" targets the whole page */
+/* margin and padding are put to 0 so it can be easy to edit the height
+and width later without any problems, doing so we cant start editing the
+height and width from 0 value rather than what the elements give us*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* this is the code to link font from google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+
+
+/* this targets the entire body of html code
+body is the part of html code which the user sees in the main screen */
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/*  what scroll-behaviour: smooth does is when we click links or go to another
+sections in page it doesnt go instantly but goes smoothly so its visually
+appealing*/
+/* we wrote html so it targets the whole html code */
+html {
+  scroll-behavior: smooth;
+}
+
+/* targeting p tag to modify its elements */
+/* we choose rgb value of we can easily manipulate the color value */
+P {
+  color: rgb(85, 85, 85);
+}
+
+/* transition */
+/* targeted 'a' tag and btn class */
+/* in transition we choose all so all the animations are going to have
+300ms of smooth delay which is 3/10 of a second */
+/* ease makes a transition effect with a slow start, then 
+fast, then end slowly */
+a, .btn {
+  transition: all 300ms ease;
+}
+
+/* desktop navigation */
+/* targeted 'nav' tag and nav-links class */
+/* display sets how we see the items on the screen */
+/* display sets whether its the contents on the page are treated as block,
+inline block, grid or flex */
+/* display : flex allows us to edit things like alignment, spacing, orders, etc */
+
+/* display flex helps to adjusts the items on screen according to the 
+view width*/
+nav, .nav-links {
+  display: flex;
+}
+
+/* justify content aligns the flex items on the main axis*/
+/* justify content space around places items with space distributed evenly 
+around the start and end of the list. */
+/* justify content space around sets the items evenly with gaps on the side
+and between them meaning theres space around the items */
+/* align-items sets the default alignment location of items inside a flex
+box or grid container */
+/* align items center aligns the items to center as default, so whenever
+you put a items it always goes to the center */
+/* the 'vh' in height is a type of measurement system in css which means 
+viewport height which works like percentage */
+/* 17vh means it occupies 17 percent of the entire visible screen */
+nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 17vh;
+}
+
+/* gap puts the gap between rows and columns in flex or grid box
+it is the parent of row-gap and column gap*/
+/* rem is a unit of measurement refered as root-em */
+/* by default a text in paragraph is set to 1 rem */
+/* list styles sets the style of the list according to the users preference */
+/* list style none removes any style which the list currently or is going to have */
+.nav-links {
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+/* targeted a element */
+/* if we only type color and set the color it targets the color of the text */
+/* text decoration means decorations like bold italic underline etc */
+/* text decoration none removes any decoration done to a text */
+/* text decoration none was done in 'a' element because it has a default
+decoration of underline to its text */
+/* text decoration color is put to white so when a text is decorated its 
+color is set to white */
+a {
+  color: black;
+  text-decoration: none;
+  text-decoration-color: white;
+}
+
+/* hover element is used when we want to change the behaviour of items when
+the cursor is put above those items */
+/* color is set to grey when the cursor hovers over the text */
+/* text decoration is set to underline when the cursor hovers over the text */
+/* text-underline offset puts a gap between the text and uberline which is 1 rem
+down in the following code*/
+a:hover {
+  color: grey;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: rgb(181, 181, 181);
+}
+
+/* targeted logo class */
+/* font size makes the size of a font to bigger or smaller according to the given values */
+.logo {
+  font-size: 2rem;
+}
+
+/* when we hover cursor over a text it changes but when we put cursor to 
+default it doesnt change the cursor and looks normal when hovered over items or texts */
+.logo:hover {
+  cursor: default;
+}
+
+/* hamburger menu */
+
+/* '#' is used to target id and '.' is for classes */
+/* display is set to none because when we are on display mode it doesnt appear on the screen */
+#hamburger-nav{
+  display: none;
+}
+
+/* targeted hamburger menu class */
+/* position sets how the elements are displayed in screen */
+/* position relative sets means positioned relative to its normal position
+setting top right bottom or left will adjust it from its normal position */
+/* display inline block means the item will only use the space covered by itself 
+rather than the whole row or column */
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+}
+
+/* flex direction sets the direction of items in flex from its main axis */
+/* default flex direction is vertical so flex direction column sets the item 
+to be in column order */
+/* justify content space between means there is only space between the items
+but not around or anywhere so it pushes the items to its corners */
+/* px or knows as pixels is also a unit of measurement which is the most used unit of measurement */
+/* height and width put to 24 and 30 px as required by the user */
+/* when we use cursor pointer the cursor changers to pointer when it is hovered
+over an item on the display */
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  cursor: pointer;
+}
+
+/* targeted hamburger icon class and span element */
+/* width set to 100% so it takes the whole space on the flex box */
+/* height is set to 2 px as users preference */
+/* transition to ease in out means the animation for it is slow start, then fast, then end slowly*/
+.hamburger-icon span{
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transition: all 300ms ease-in-out;
+}
+
+/*  position absolute means the element is positioned absolutely to its first positioned parent*/
+/*  top property affects the vertical position of an item*/
+/* top 100% means an item will take all the vertical space */
+/* right property affects the horizontal position of an item */
+/* right 0 means the place the item 0 px from the right of the view port */
+/* background color is set to color white */
+/* max height sets the maximum height on an element and prevents it from becoming
+larger than the specified value */
+/* overflow controls what happens to the items that is to big to fit into a set or certain area */
+/*  overflow hidden is used to hide the overflowed content on the display*/
+.menu-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  width: fit-content;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
+}
+
+.menu-links a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+  transition: all 300ms ease-in-out;
+}
+
+.menu-links li {
+  list-style: none;
+}
+
+/* targetting menu links class and open class */
+/* open will use the java code written in script.js */
+/* max height is set to 300px so it doesnt exceed that value */
+.menu-links.open {
+  max-height: 300px;
+}
+
+/* targetting hamburger icon and open class, span element */
+/* span first child is used so that it adds the function to the first child only */
+/* note: there are 3 span elements so we are transforming the first span */
+/* in translate (1 2) 1 is the x axis and 2 is the y axis */
+/* transform property lets us rotate scale or translate the items */
+/* transform rotate rotated the span in 45 degrees */
+/* transform translate 10px and 5px moved the span so it is aligned later to the cross or X */
+.hamburger-icon.open span:first-child {
+  transform: rotate(45deg) translate(10px, 5px); 
+}
+
+/* span:nth child(2) means its selectiing the second span element from the hamburger icon class */
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+/* span last child means its selecting the last span element in the hamburger icon */
+/* its now rotated minus 45 degrees and 10px to x axis and -5px to y axis so it matches the icon X or cross */
+.hamburger-icon.open span:last-child {
+  transform: rotate(-45deg) translate(10px, -5px); 
+}
+
+/* transform none doesnt transform or removes any prior transform properties added to it */
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+/* opacity is set to 1 */
+.hamburger-icon span:first-child {
+  opacity: 1;
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+/* sections */
+
+/* targetting padding of top side */
+/* margin 1 = all margins set to 1 */
+/* margin 1 2 = top and bottom 1, right and left 2*/
+/* margin 1 2 3 = top 1, right and left 2, bottom 3  */
+/* same applies to padding */
+/* If you set box-sizing: border-box; on an element, padding and border 
+are included in the width and height: Both divs are the same size now! */
+/* min height mins means the elements minimum height */
+section {
+  padding-top: 4vh;
+  height: 96vh;
+  margin: 0 10rem;
+  box-sizing: border-box;
+  min-height: fit-content;
+}
+
+.section-container {
+  display: flex;
+}
+
+/* profile sections */
+
+#profile {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  height: 80vh;
+}
+
+/* margin auto is usedo to center items horizontally with its parent container */
+.section__pic-container {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
+
+/* align self overrides a grid or flex items align value */
+/* overriding means overwriting value which was previously made */
+.section__text {
+  align-self: center;
+  text-align: center;
+}
+
+/* targetting section text class and p element */
+.section__text p {
+  font-weight: 600;
+}
+
+.section__text__p1{
+  text-align: center;
+}
+
+.section__text__p2{
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+/* targetting socials container id */
+#socials-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+/* icons */
+
+.icon {
+  cursor: pointer;
+  height: 2rem;
+}
+
+/* buttons */
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+   font-weight: 600;
+   transition: all 300ms ease;
+   padding: 1rem;
+   width: 8rem;
+   border-radius: 2rem;
+}
+
+.btn-color-1, .btn-color-2 {
+  border: rgb(53, 53, 53) 0.1rem solid;
+}
+
+.btn-color-1:hover, .btn-color-2:hover {
+  cursor: pointer;
+}
+
+.btn-color-1, .btn-color-2:hover {
+  background: rgb(53, 53, 53);
+  color: white;
+}
+
+.btn-color-1:hover {
+  background: rgb(0, 0, 0);
+}
+
+.btn-color-2 {
+  background: none;
+}
+
+.btn-color-2:hover {
+  border:  rgb(255, 255, 255) 0.1rem solid;
+}
+
+.btn-container {
+  gap: 1rem;
+}
+
+/* about section */
+
+#about {
+  position: relative;
+}
+
+.about-containers {
+  gap: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+/* flex direction columns makes the items arrange in vertical order side by side */
+.about-details-container {
+  justify-content: center;
+  flex-direction: column;
+}
+
+.about-containers, .about-details-container {
+  display: flex;
+}
+
+.about-pic {
+  border-radius: 2rem;
+}
+
+.arrow {
+  position: absolute;
+  right: -5rem;
+  bottom: 2.5rem;
+}
+
+.details-container {
+  padding: 1.5rem;
+  flex: 1;
+  background: white;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  text-align: center;
+}
+
+.section-container {
+  gap: 4rem;
+  height: 80%;
+}
+
+.section__pic-container {
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
+
+/* experience section*/
+
+#experience {
+  position: relative;
+}
+
+.experience-sub-title {
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.experience-details-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* text align initial puts text in right side */
+/* flex wrap = wrap means it puts items in position turn by turn downwards
+without fixing it in single row like flex wrap = no wrap */
+.article-container {
+  display: flex;
+  text-align: initial;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 2.5rem;
+  justify-content: space-around;
+}
+
+article {
+  display: flex;
+  width: 10rem;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+
+article .icon {
+  cursor: default;
+}
+
+/* projects section */
+
+#projects {
+  position: relative;
+}
+
+.color-container {
+  border-color: rgb(163, 163, 163);
+  background: rgb(250, 250, 250);
+}
+
+.project-img {
+  border-radius: 2rem;
+  width: 90%;
+  height: 90%;
+}
+
+.project-title {
+  margin: 1rem;
+  color: black;
+}
+
+.project-btn {
+  color: black;
+  border-color: rgb(163, 163, 163);
+}
+
+/* contact */
+
+#contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 70vh;
+}
+
+.contact-info-upper-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  background: rgb(250, 250, 250);
+  margin: 2rem auto;
+  padding: 0.5rem;
+}
+
+.contact-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+
+.contact-info-container p {
+  font-size: larger;
+}
+
+.contact-icon {
+  cursor: default;
+  height: 2rem;
+}
+
+.email-icon {
+  height: 2.5rem;
+}
+
+/* footer section */
+
+footer {
+  height: 26vh;
+  margin: 0 1rem;
+}
+
+footer p {
+  text-align: center;
+}
